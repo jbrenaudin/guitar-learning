@@ -12,14 +12,34 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+
+        $(function () {
+            valeurs = getValues();
+            setInterval(function () {
+                $('#titre').text(valeurs['Do-Majeur'][0]);
+                $('#image').attr('src', 'http://ekladata.com/dHwbRHoVA_knRWGc0Qs6EhdEa1Y.png');
+                alert($('#image').attr('src'));
+            }, 2000);
+
+        });
+
+        function getValues() {
+            values = new Array();
+            values['Do-Majeur'] = new Array('Do Majeur (C)', 'http://ekladata.com/dHwbRHoVA_knRWGc0Qs6EhdEa1Y.png');
+            return values;
+        }
+    </script>
 </head>
 <body>
 
 <div class="row">
     <div class="col-md-12" style="text-align: center;">
-        <h1>Do Majeur (C)</h1>
+        <h1 id="titre"/>
         <br/>
-        <img src="http://ekladata.com/dHwbRHoVA_knRWGc0Qs6EhdEa1Y.png">
+        <img id="image"/>
     </div>
 </div>
 
