@@ -17,18 +17,25 @@
 
 
         $(function () {
-            valeurs = getValues();
+            var valeurs = getValues();
             setInterval(function () {
-                $('#titre').text(valeurs['Do-Majeur'][0]);
-                $('#image').attr('src', 'http://ekladata.com/dHwbRHoVA_knRWGc0Qs6EhdEa1Y.png');
-                alert($('#image').attr('src'));
+                var index = Math.floor(Math.random() * valeurs.length);
+                var valeur = valeurs[index];
+                $('#titre').text(valeur[0]);
+                $('#image').attr('src', valeur[1]);
             }, 2000);
 
         });
-
         function getValues() {
-            values = new Array();
-            values['Do-Majeur'] = new Array('Do Majeur (C)', 'http://ekladata.com/dHwbRHoVA_knRWGc0Qs6EhdEa1Y.png');
+            var values = new Array();
+            values[0] = new Array('La Majeur (A)', 'https://www.tabs4acoustic.com/images/uploads/images/La-Majeur(1).png');
+            values[1] = new Array('Si Majeur (B)', 'https://www.tabs4acoustic.com/images/uploads/images/Si-Majeur(1).png');
+            values[2] = new Array('Do Majeur (C)', 'http://ekladata.com/dHwbRHoVA_knRWGc0Qs6EhdEa1Y.png');
+            values[3] = new Array('Ré Majeur (D)', 'https://www.tabs4acoustic.com/images/uploads/images/Re-Majeur(1).png');
+            values[4] = new Array('Mi Majeur (E)', 'https://www.tabs4acoustic.com/images/uploads/images/Mi-Majeur(1).png');
+            values[5] = new Array('Fa Majeur (F)', 'https://www.tabs4acoustic.com/images/uploads/images/Fa-majeur.png');
+            values[6] = new Array('Sol Majeur (G)', 'https://www.tabs4acoustic.com/accords-guitare/[3,2,0,0,0,2]-0.png');
+            values[7] = new Array('Mi Mineur (EM)', 'https://www.tabs4acoustic.com/images/uploads/images/Mi-mineur(1).png');
             return values;
         }
     </script>
@@ -37,9 +44,9 @@
 
 <div class="row">
     <div class="col-md-12" style="text-align: center;">
-        <h1 id="titre"/>
+        <h1 id="titre">Test</h1>
         <br/>
-        <img id="image"/>
+        <img id="image" src="https://i.vimeocdn.com/portrait/58832_300x300">
     </div>
 </div>
 
